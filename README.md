@@ -227,3 +227,21 @@ The following forks have been used in the making of the script:
 Join our active discord channel:
 
 https://discord.gg/myUAcrgNfc
+
+
+__________________________________
+Ready now you have yiimp installed on your machine, congratulations, but don't go out releasing fireworks because it probably won't be working, as soon as you access your site it will present the white page of death
+This happens because of the PHP version that yiimp uses, ubuntu downloads the latest version not being compatible with the pool
+
+Now let's fix it
+Let's install the right php
+sudo apt install php7.3-memcache
+sudo apt install php7.3-memcached
+sudo apt install memcached
+Now let's make the system switch from php 8.* to 7.3
+sudo update-alternatives --config php
+select the option corresponding to PHP7.3
+
+Now just restart nginx and php
+sudo service nginx restart
+sudo service php7.3-fpm restart
