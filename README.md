@@ -235,13 +235,22 @@ This happens because of the PHP version that yiimp uses, ubuntu downloads the la
 
 Now let's fix it
 Let's install the right php
+
 sudo apt install php7.3-memcache
+
 sudo apt install php7.3-memcached
+
 sudo apt install memcached
+
 Now let's make the system switch from php 8.* to 7.3
+
 sudo update-alternatives --config php
+
 select the option corresponding to PHP7.3
 
+
 Now just restart nginx and php
+
 sudo service nginx restart
+
 sudo service php7.3-fpm restart
